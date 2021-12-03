@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root{
+    --font-ubuntu: 'Ubuntu'.monospace;
+    --color-border: #e5e5e5e;
+}
+
+.font-ubuntu{
+    font: normal 500 16px var(--font-ubuntu);
+}
+
+#register{
+    padding: 5% 0;
+    background: #eee;
+}
+#register .user-wrapper{
+    position: relative;
+    transition: 0.2s all ease;
+}
+#register .user-wrapper:hover{
+    filter: drop-shadow(1px 1px 22px #34f384);
+}
+
+#register .circle{
+    position:absolute;
+    top:-20%;
+    left:50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border: 5px solid #000;
+    border-radius: 50%;
+}
+
+#register .wrapper {
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 1170px;
+}
