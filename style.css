@@ -10,10 +10,10 @@
 }
 
 #register{
-    padding: 5% 0;
     background: #eee;
 }
-#register .user-wrapper{
+#register .user-wrapper,
+#login-form .user-wrapper{
     position: relative;
     transition: 0.2s all ease;
 }
@@ -21,7 +21,8 @@
     filter: drop-shadow(1px 1px 22px #34f384);
 }
 
-#register .circle{
+#register .circle,
+#login-form .circle{
     position:absolute;
     top:-20%;
     left:50%;
@@ -33,7 +34,8 @@
     border-radius: 50%;
 }
 
-#register .wrapper {
+#register .wrapper,
+#login-form .wrapper {
     margin: 0 auto;
     padding: 30px;
     max-width: 1170px;

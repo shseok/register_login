@@ -4,6 +4,12 @@ include("header.php");
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // print $_POST['name'];
+    // print $_POST['phone'];
+    // print $_POST['age'];
+    // print $_POST['birth'];
+    // print $_POST['address'];
+    // print $_POST['email'];
     require('register-process.php');
 }
 ?>
@@ -30,33 +36,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="form-col" style="min-width: 280px;">
                         <div class="col">
                             <!-- php를 value에 써준 이유는 제출시 오륙 나도 기존에 존재하도록 하기 위함. 어디서 오류났는지 알기위해  -->
-                            <input type="text" <?php if (isset($_POST['name'])) echo $_POST['name']; ?> name="name" id="name" class="form-control" placeholder="성함">
+                            <input type="text" value="<?php if (isset($_POST['name'])) echo $_POST['name']; ?>" name="name" id="name" class="form-control" placeholder="성함">
                         </div>
                         <div class="col my-2">
-                            <input type="tel" <?php if (isset($_POST['phone'])) echo $_POST['phone']; ?> required name="phone" id="phone" class="form-control" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="전화번호 (양식: 000-0000-0000)* 
+                            <input type="tel" value="<?php if (isset($_POST['phone'])) echo $_POST['phone']; ?>" required name="phone" id="phone" class="form-control" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="전화번호 (양식: 000-0000-0000)* 
                              ">
                         </div>
                         <div class="col my-2">
-                            <input type="number" <?php if (isset($_POST['age'])) echo $_POST['age']; ?> required name="age" id="age" class="form-control" placeholder="나이*">
+                            <input type="number" value="<?php if (isset($_POST['age'])) echo $_POST['age']; ?>" required name="age" id="age" class="form-control" placeholder="나이*">
                         </div>
+                        <div class="col my-2">
+                            <input type="text" value="<?php if (isset($_POST['birth'])) echo $_POST['birth']; ?>" required name="birth" id="birth" class="form-control" placeholder="생년월일*" onfocus="(this.type = 'date')">
+                        </div>
+                        <div class="col my-2">
+                            <input type="text" value="<?php if (isset($_POST['address'])) echo $_POST['address']; ?>" required name="address" id="address" class="form-control" placeholder="주소*">
+                        </div>
+                        <div class="col my-2">
+                            <input type="email" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" required name="email" id="email" class="form-control" placeholder="이메일*">
+                        </div>
+                        <div class="col my-2">
+                            <input type="text" value="<?php if (isset($_POST['gender'])) echo $_POST['gender']; ?>" required name="gender" id="gender" class="form-control" placeholder="성별(남/여)*">
+                        </div>
+                    </div>
+                    <div class="form-check form-check-inline pl-4">
+                        <input type="checkbox" name="agreement" class="form-check-input" required>
+                        <label for="agreement" class="form-check-label font-ubuntu text-black-50">개인정보 동의<a href="#"> 자세히 보기</a>(*)</label>
+                    </div>
 
-                        <div class="col my-2">
-                            <input type="text" <?php if (isset($_POST['birth'])) echo $_POST['birth']; ?> required name="birth" id="birth" class="form-control" placeholder="생년월일*" onfocus="(this.type = 'date')">
-                        </div>
-                        <div class="col my-2">
-                            <input type="text" <?php if (isset($_POST['address'])) echo $_POST['address']; ?> required name="address" id="address" class="form-control" placeholder="주소*">
-                        </div>
-                        <div class="col my-2">
-                            <input type="email" <?php if (isset($_POST['email'])) echo $_POST['email']; ?> required name="email" id="email" class="form-control" placeholder="이메일*">
-                        </div>
-                        <div class="form-check form-check-inline pl-4">
-                            <input type="checkbox" name="agreement" class="form-check-input" required>
-                            <label for="agreement" class="form-check-label font-ubuntu text-black-50">개인정보 동의<a href="#"> 자세히 보기</a>(*)</label>
-                        </div>
-
-                        <div class="submit-btn text-center my-5">
-                            <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">계속</button>
-                        </div>
+                    <div class="submit-btn text-center my-5">
+                        <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">계속</button>
                     </div>
                 </form> <!-- 양식이 제출된 위치에 양식 데이터를 보냄-->
             </div>
